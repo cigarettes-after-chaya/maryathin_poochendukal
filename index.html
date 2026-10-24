@@ -2,462 +2,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</title>
 
-    :root {
-      --bg: #100c16;
-      --pink: #ffb6cc;
-      --muted: #d9b9cb;
-      --glass: rgba(255,255,255,.055);
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap');
 
-    * { box-sizing: border-box; }
+:root {
+  --pink: #ffb6cc;
+  --muted: #d9b9cb;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: #fff0f6;
-      background:
-        radial-gradient(ellipse at 50% 0%, #432039 0%, transparent 55%),
-        linear-gradient(145deg, #100c16, #1d1022 65%, #100c16);
-      font-family: 'Poppins', sans-serif;
-    }
+* { box-sizing: border-box; }
 
-    .stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff0f6;
+  background:
+    radial-gradient(ellipse at 50% 0%, #432039, transparent 55%),
+    linear-gradient(145deg, #100c16, #1d1022 65%, #100c16);
+  font-family: 'Poppins', sans-serif;
+}
 
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: #ffe5ef;
-      box-shadow: 0 0 10px #ffb6cc;
-      animation: twinkle 3s ease-in-out infinite alternate;
-    }
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-    @keyframes twinkle {
-      from { opacity: .15; transform: scale(.7); }
-      to { opacity: .95; transform: scale(1.4); }
-    }
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #ffe5ef;
+  box-shadow: 0 0 10px #ffb6cc;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
 
-    main {
-      position: relative;
-      z-index: 1;
-      width: min(100% - 32px, 850px);
-      margin: auto;
-      padding: 45px 0 35px;
-      text-align: center;
-    }
+@keyframes twinkle {
+  from { opacity: .15; transform: scale(.7); }
+  to { opacity: .95; transform: scale(1.4); }
+}
 
-    .eyebrow {
-      color: var(--pink);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 10px;
-    }
+main {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 32px, 850px);
+  margin: auto;
+  padding: 45px 0 35px;
+  text-align: center;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 7vw, 54px);
-      font-weight: 400;
-      line-height: 1.25;
-      margin: 14px 0 10px;
-    }
+.eyebrow {
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+}
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-      margin: 0 auto 24px;
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 7vw, 54px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 14px 0 10px;
+}
 
-    .garden {
-      position: relative;
-      margin: 15px auto 18px;
-      width: min(100%, 500px);
-      aspect-ratio: 1 / .9;
-      border: 1px solid rgba(255,182,204,.13);
-      border-radius: 24px;
-      background: radial-gradient(ellipse at 50% 55%, rgba(255,150,194,.10), transparent 63%), var(--glass);
-      box-shadow: 0 20px 80px rgba(0,0,0,.22);
-      overflow: hidden;
-    }
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 auto 24px;
+}
 
-    #flowerSvg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
+.garden {
+  position: relative;
+  margin: 15px auto 18px;
+  width: min(100%, 500px);
+  aspect-ratio: 1 / .9;
+  border: 1px solid rgba(255,182,204,.13);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(255,150,194,.10), transparent 63%),
+    rgba(255,255,255,.055);
+  box-shadow: 0 20px 80px rgba(0,0,0,.22);
+  overflow: hidden;
+}
 
-    #flowerHead {
-      transform-box: view-box;
-      transform-origin: 200px 190px;
-      animation: sway 4s ease-in-out infinite alternate;
-    }
+#flowerSvg {
+  width: 100%;
+  height: 100%;
+}
 
-    @keyframes sway {
-      from { transform: rotate(-3deg); }
-      to { transform: rotate(3deg); }
-    }
+#flowerHead {
+  transform-box: view-box;
+  transform-origin: 200px 190px;
+  animation: sway 4s ease-in-out infinite alternate;
+}
 
-    .petal {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: bloom 1.2s cubic-bezier(.2,.8,.2,1) both;
-    }
+@keyframes sway {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
 
-    @keyframes bloom {
-      0% { opacity: 0; transform: scale(.03); }
-      70% { opacity: 1; transform: scale(1.08); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+/* Petals grow from small buds into their full shape */
+.petal {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bloom 1s cubic-bezier(.2,.8,.2,1) both;
+}
 
-    .leaf {
-      transform-box: fill-box;
-      transform-origin: bottom center;
-      animation: leafSway 3.5s ease-in-out infinite alternate;
-    }
+@keyframes bloom {
+  0% {
+    opacity: 0;
+    scale: .03;
+  }
+  70% {
+    opacity: 1;
+    scale: 1.08;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
 
-    @keyframes leafSway {
-      from { transform: rotate(-2deg); }
-      to { transform: rotate(3deg); }
-    }
+.leaf {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: leafSway 3.5s ease-in-out infinite alternate;
+}
 
-    .flower-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      margin: 8px 0 3px;
-    }
+@keyframes leafSway {
+  from { transform: rotate(-2deg); }
+  to { transform: rotate(3deg); }
+}
 
-    .flower-note {
-      font-size: 12px;
-      color: var(--muted);
-      min-height: 22px;
-    }
+.flower-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin: 8px 0 3px;
+}
 
-    .choices {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin: 20px 0 24px;
-    }
+.flower-note {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 22px;
+}
 
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: 1px solid rgba(255,182,204,.25);
-      border-radius: 30px;
-      background: rgba(255,255,255,.04);
-      color: #ffe9f1;
-      padding: 10px 15px;
-      font-size: 12px;
-      transition: .25s ease;
-    }
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0 24px;
+}
 
-    button:hover, button.active {
-      background: rgba(255,182,204,.15);
-      border-color: var(--pink);
-      transform: translateY(-2px);
-    }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid rgba(255,182,204,.25);
+  border-radius: 30px;
+  background: rgba(255,255,255,.04);
+  color: #ffe9f1;
+  padding: 10px 15px;
+  font-size: 12px;
+  transition: .25s ease;
+}
 
-    .letter {
-      margin: 22px auto 0;
-      max-width: 500px;
-      padding: 22px;
-      border: 1px solid rgba(255,182,204,.16);
-      background: rgba(255,255,255,.035);
-      border-radius: 18px;
-    }
+button:hover,
+button.active {
+  background: rgba(255,182,204,.15);
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
 
-    .letter h2 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-      font-size: 22px;
-      margin: 0 0 10px;
-    }
+.letter {
+  margin: 22px auto 0;
+  max-width: 500px;
+  padding: 22px;
+  border: 1px solid rgba(255,182,204,.16);
+  background: rgba(255,255,255,.035);
+  border-radius: 18px;
+}
 
-    .letter p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-      margin: 0;
-      overflow-wrap: anywhere;
-    }
+.letter h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 10px;
+}
 
-    footer {
-      margin-top: 26px;
-      color: #a98a9e;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
+.letter p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0;
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-      }
-    }
-  </style>
+footer {
+  margin-top: 26px;
+  color: #a98a9e;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="stars" id="stars"></div>
+<div class="stars" id="stars"></div>
 
-  <main>
-    <div class="eyebrow">A little garden, just for you</div>
-    <h1>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</h1>
-    <p class="subtitle">Choose a flower and watch it bloom.</p>
+<main>
+  <div class="eyebrow">A little garden, just for you</div>
 
-    <section class="garden" aria-label="Animated flower garden">
-      <svg id="flowerSvg" viewBox="0 0 400 360" role="img" aria-label="An animated blooming flower">
-        <defs>
-          <linearGradient id="stemGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#24553d"/>
-            <stop offset="50%" stop-color="#70b77b"/>
-            <stop offset="100%" stop-color="#28573c"/>
-          </linearGradient>
-          <radialGradient id="centerGrad">
-            <stop offset="0%" stop-color="#ffe6a0"/>
-            <stop offset="100%" stop-color="#e99b48"/>
-          </radialGradient>
-        </defs>
-        <path d="M200 190 Q190 260 201 340" fill="none" stroke="url(#stemGrad)" stroke-width="8" stroke-linecap="round"/>
-        <g class="leaf">
-          <path d="M199 280 Q130 220 110 260 Q145 300 199 280Z" fill="#3d8b59"/>
-          <path d="M190 278 Q148 261 119 262" fill="none" stroke="#83c88d" stroke-width="1.5"/>
-        </g>
-        <g class="leaf">
-          <path d="M202 310 Q260 252 286 285 Q258 323 202 310Z" fill="#34794d"/>
-          <path d="M209 308 Q252 289 278 287" fill="none" stroke="#83c88d" stroke-width="1.5"/>
-        </g>
-        <g id="flowerHead"></g>
-      </svg>
-    </section>
+  <h1>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</h1>
+  <p class="subtitle">Choose a flower and watch it bloom.</p>
 
-    <div class="flower-name" id="flowerName">Rose</div>
-    <div class="flower-note" id="flowerNote">A little softness for your day.</div>
+  <section class="garden" aria-label="Animated flower garden">
+    <svg id="flowerSvg" viewBox="0 0 400 360" role="img" aria-label="An animated flower">
+      <defs>
+        <linearGradient id="stemGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#24553d"/>
+          <stop offset="50%" stop-color="#70b77b"/>
+          <stop offset="100%" stop-color="#28573c"/>
+        </linearGradient>
+      </defs>
 
-    <div class="choices" id="choices">
-      <button class="active" data-flower="rose">🌹 Rose</button>
-      <button data-flower="lily">🤍 Lily</button>
-      <button data-flower="sunflower">🌻 Sunflower</button>
-      <button data-flower="poppy">🌺 Poppy</button>
-      <button data-flower="passionflower">💜 Passionflower</button>
-    </div>
+      <path d="M200 190 Q190 260 201 340"
+        fill="none" stroke="url(#stemGrad)"
+        stroke-width="8" stroke-linecap="round"/>
 
-    <section class="letter">
-      <h2>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</h2>
-      <p>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</p>
-    </section>
+      <g class="leaf">
+        <path d="M199 280 Q130 220 110 260 Q145 300 199 280Z"
+          fill="#3d8b59"/>
+        <path d="M190 278 Q148 261 119 262"
+          fill="none" stroke="#83c88d" stroke-width="1.5"/>
+      </g>
 
-    <footer>MADE WITH LOVE, JUST FOR YOU ✦</footer>
-  </main>
+      <g class="leaf">
+        <path d="M202 310 Q260 252 286 285 Q258 323 202 310Z"
+          fill="#34794d"/>
+        <path d="M209 308 Q252 289 278 287"
+          fill="none" stroke="#83c88d" stroke-width="1.5"/>
+      </g>
 
-  <script>
-    // Twinkling background stars
-    const stars = document.getElementById('stars');
-    for (let i = 0; i < 65; i++) {
-      const star = document.createElement('span');
-      star.className = 'star';
-      star.style.left = Math.random() * 100 + '%';
-      star.style.top = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 4 + 's';
-      star.style.animationDuration = (2 + Math.random() * 3) + 's';
-      stars.appendChild(star);
+      <g id="flowerHead"></g>
+    </svg>
+  </section>
+
+  <div class="flower-name" id="flowerName">Rose</div>
+  <div class="flower-note" id="flowerNote">A little softness for your day.</div>
+
+  <div class="choices" id="choices">
+    <button class="active" data-flower="rose">🌹 Rose</button>
+    <button data-flower="lily">🤍 Lily</button>
+    <button data-flower="sunflower">🌻 Sunflower</button>
+    <button data-flower="poppy">🌺 Poppy</button>
+    <button data-flower="passionflower">💜 Passionflower</button>
+  </div>
+
+  <section class="letter">
+    <h2>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</h2>
+    <p>പൂച്ചെണ്ടുകൾ ഫോർ മറിയം 💋</p>
+  </section>
+
+  <footer>MADE WITH LOVE, JUST FOR YOU ✦</footer>
+</main>
+
+<script>
+const stars = document.getElementById('stars');
+
+for (let i = 0; i < 65; i++) {
+  const star = document.createElement('span');
+  star.className = 'star';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.animationDelay = Math.random() * 4 + 's';
+  star.style.animationDuration = (2 + Math.random() * 3) + 's';
+  stars.appendChild(star);
+}
+
+const flowers = {
+  rose: {
+    name: 'Rose',
+    note: 'A little softness for your day.',
+    petals: 18,
+    rx: 19,
+    ry: 38,
+    color: '#e94c7c',
+    light: '#ff9eb9',
+    center: '#f8d16d',
+    layers: 2
+  },
+  lily: {
+    name: 'Lily',
+    note: 'Elegant, gentle, and bright.',
+    petals: 6,
+    rx: 24,
+    ry: 55,
+    color: '#fff0f4',
+    light: '#ffb6cc',
+    center: '#f3c65d',
+    layers: 1
+  },
+  sunflower: {
+    name: 'Sunflower',
+    note: 'A little sunshine wherever you go.',
+    petals: 18,
+    rx: 13,
+    ry: 46,
+    color: '#ffbf37',
+    light: '#ffe78c',
+    center: '#5e3325',
+    layers: 1
+  },
+  poppy: {
+    name: 'Poppy',
+    note: 'A bright little burst of colour.',
+    petals: 6,
+    rx: 29,
+    ry: 42,
+    color: '#f0444c',
+    light: '#ff9b9d',
+    center: '#2a2028',
+    layers: 1
+  },
+  passionflower: {
+    name: 'Passionflower',
+    note: 'A little wonder in every petal.',
+    petals: 10,
+    rx: 19,
+    ry: 45,
+    color: '#9870e8',
+    light: '#e1c5ff',
+    center: '#f4d26b',
+    layers: 1
+  }
+};
+
+const head = document.getElementById('flowerHead');
+const flowerName = document.getElementById('flowerName');
+const flowerNote = document.getElementById('flowerNote');
+const NS = 'http://www.w3.org/2000/svg';
+
+function svgElement(tag, attrs) {
+  const el = document.createElementNS(NS, tag);
+  Object.entries(attrs).forEach(([key, value]) => {
+    el.setAttribute(key, value);
+  });
+  return el;
+}
+
+function addPetal(cx, cy, rx, ry, color, stroke, angle, delay) {
+  const petal = svgElement('ellipse', {
+    cx,
+    cy,
+    rx,
+    ry,
+    fill: color,
+    stroke,
+    'stroke-width': 1,
+    class: 'petal',
+    // Each petal rotates around the centre of the flower.
+    transform: `rotate(${angle} 200 190)`,
+    style: `animation-delay:${delay}s`
+  });
+  head.appendChild(petal);
+}
+
+function bloomFlower(type) {
+  const f = flowers[type];
+  head.replaceChildren();
+
+  flowerName.textContent = f.name;
+  flowerNote.textContent = f.note;
+
+  // Outer layer: petals are distributed evenly around the centre.
+  for (let i = 0; i < f.petals; i++) {
+    const angle = (360 / f.petals) * i;
+
+    addPetal(
+      200,
+      190 - f.ry * 0.57,
+      f.rx,
+      f.ry,
+      f.color,
+      f.light,
+      angle,
+      i * 0.055
+    );
+  }
+
+  // Inner layer: offset the angles to fill the gaps between petals.
+  if (f.layers > 1) {
+    for (let i = 0; i < f.petals; i++) {
+      const angle = (360 / f.petals) * i + 360 / (f.petals * 2);
+
+      addPetal(
+        200,
+        190 - f.ry * 0.30,
+        f.rx * 0.76,
+        f.ry * 0.72,
+        '#ff779b',
+        f.light,
+        angle,
+        0.35 + i * 0.055
+      );
     }
+  }
 
-    const flowers = {
-      rose: {
-        name: 'Rose',
-        note: 'A little softness for your day.',
-        petals: 18,
-        rx: 24,
-        ry: 39,
-        color: '#e94c7c',
-        light: '#ff9eb9',
-        center: '#f8d16d',
-        shape: 'rose'
-      },
-      lily: {
-        name: 'Lily',
-        note: 'Elegant, gentle, and bright.',
-        petals: 6,
-        rx: 25,
-        ry: 57,
-        color: '#fff0f4',
-        light: '#ffb6cc',
-        center: '#f3c65d',
-        shape: 'lily'
-      },
-      sunflower: {
-        name: 'Sunflower',
-        note: 'A little sunshine wherever you go.',
-        petals: 18,
-        rx: 14,
-        ry: 47,
-        color: '#ffbf37',
-        light: '#ffe78c',
-        center: '#5e3325',
-        shape: 'sunflower'
-      },
-      poppy: {
-        name: 'Poppy',
-        note: 'A bright little burst of colour.',
-        petals: 6,
-        rx: 30,
-        ry: 43,
-        color: '#f0444c',
-        light: '#ff9b9d',
-        center: '#2a2028',
-        shape: 'poppy'
-      },
-      passionflower: {
-        name: 'Passionflower',
-        note: 'A little wonder in every petal.',
-        petals: 10,
-        rx: 22,
-        ry: 47,
-        color: '#9870e8',
-        light: '#e1c5ff',
-        center: '#f4d26b',
-        shape: 'passionflower'
-      }
-    };
+  // Flower centre
+  const centreRadius = type === 'sunflower' ? 25 : 14;
 
-    const head = document.getElementById('flowerHead');
-    const flowerName = document.getElementById('flowerName');
-    const flowerNote = document.getElementById('flowerNote');
-    const NS = 'http://www.w3.org/2000/svg';
+  const centre = svgElement('circle', {
+    cx: 200,
+    cy: 190,
+    r: centreRadius,
+    fill: f.center,
+    stroke: f.light,
+    'stroke-width': 2,
+    class: 'petal',
+    style: 'animation-delay:.55s'
+  });
 
-    function svgElement(tag, attrs) {
-      const el = document.createElementNS(NS, tag);
-      for (const [key, value] of Object.entries(attrs)) {
-        el.setAttribute(key, value);
-      }
-      return el;
+  head.appendChild(centre);
+
+  // Small details inside the flower centre
+  for (let i = 0; i < 30; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = Math.random() * (centreRadius - 3);
+
+    head.appendChild(svgElement('circle', {
+      cx: 200 + Math.cos(angle) * radius,
+      cy: 190 + Math.sin(angle) * radius,
+      r: Math.random() * 1.5 + .5,
+      fill: type === 'sunflower' ? '#e9a43b' : '#ffe5a0',
+      opacity: .85
+    }));
+  }
+
+  // Delicate radial details for lily and passionflower
+  if (type === 'lily' || type === 'passionflower') {
+    for (let i = 0; i < 6; i++) {
+      const angle = i * Math.PI / 3;
+      const x1 = 200 + Math.cos(angle) * 12;
+      const y1 = 190 + Math.sin(angle) * 12;
+      const x2 = 200 + Math.cos(angle) * 34;
+      const y2 = 190 + Math.sin(angle) * 34;
+
+      head.appendChild(svgElement('line', {
+        x1, y1, x2, y2,
+        stroke: f.center,
+        'stroke-width': 1.8,
+        'stroke-linecap': 'round'
+      }));
+
+      head.appendChild(svgElement('circle', {
+        cx: x2,
+        cy: y2,
+        r: 2.5,
+        fill: f.center
+      }));
     }
+  }
+}
 
-    function bloomFlower(type) {
-      const f = flowers[type];
-      head.replaceChildren();
-
-      flowerName.textContent = f.name;
-      flowerNote.textContent = f.note;
-
-      // Add petals one by one for a blooming effect
-      for (let i = 0; i < f.petals; i++) {
-        const angle = (360 / f.petals) * i;
-
-        const petal = svgElement('ellipse', {
-          cx: 200,
-          cy: 190 - f.ry * 0.55,
-          rx: f.rx,
-          ry: f.ry,
-          fill: f.color,
-          stroke: f.light,
-          'stroke-width': 1,
-          opacity: 0,
-          class: 'petal',
-          transform: `rotate(${angle} 200 190)`,
-          style: `animation-delay:${i * 0.045}s`
-        });
-
-        head.appendChild(petal);
-      }
-
-      // Extra inner petals for the rose
-      if (f.shape === 'rose') {
-        for (let i = 0; i < 8; i++) {
-          const angle = i * 45;
-          const petal = svgElement('ellipse', {
-            cx: 200,
-            cy: 178,
-            rx: 12,
-            ry: 23,
-            fill: i % 2 ? '#c92d61' : '#ff779b',
-            stroke: '#ff9eb9',
-            'stroke-width': 1,
-            class: 'petal',
-            transform: `rotate(${angle} 200 190)`,
-            style: `animation-delay:${0.6 + i * 0.06}s`
-          });
-          head.appendChild(petal);
-        }
-      }
-
-      // Flower centre
-      const centreRadius = f.shape === 'sunflower' ? 25 : 15;
-      const centre = svgElement('circle', {
-        cx: 200,
-        cy: 190,
-        r: centreRadius,
-        fill: f.center,
-        stroke: f.light,
-        'stroke-width': 2,
-        class: 'petal',
-        style: `animation-delay:${0.5}s`
-      });
-      head.appendChild(centre);
-
-      // Small dots on the centre
-      for (let i = 0; i < 24; i++) {
-        const angle = Math.random() * Math.PI * 2;
-        const radius = Math.random() * (centreRadius - 4);
-        const dot = svgElement('circle', {
-          cx: 200 + Math.cos(angle) * radius,
-          cy: 190 + Math.sin(angle) * radius,
-          r: Math.random() * 1.7 + .5,
-          fill: f.shape === 'sunflower' ? '#e9a43b' : '#ffe5a0',
-          opacity: .8
-        });
-        head.appendChild(dot);
-      }
-
-      // Lily and passionflower have delicate decorative details
-      if (f.shape === 'lily' || f.shape === 'passionflower') {
-        for (let i = 0; i < 6; i++) {
-          const angle = i * 60 * Math.PI / 180;
-          const x1 = 200 + Math.cos(angle) * 13;
-          const y1 = 190 + Math.sin(angle) * 13;
-          const x2 = 200 + Math.cos(angle) * 34;
-          const y2 = 190 + Math.sin(angle) * 34;
-          const line = svgElement('line', {
-            x1, y1, x2, y2,
-            stroke: f.center,
-            'stroke-width': 1.8,
-            'stroke-linecap': 'round',
-            opacity: .9
-          });
-          head.appendChild(line);
-          head.appendChild(svgElement('circle', {
-            cx: x2, cy: y2, r: 2.5, fill: f.center
-          }));
-        }
-      }
-    }
-
-    document.querySelectorAll('#choices button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('#choices button').forEach(b => {
-          b.classList.remove('active');
-        });
-        button.classList.add('active');
-        bloomFlower(button.dataset.flower);
-      });
+document.querySelectorAll('#choices button').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('#choices button').forEach(b => {
+      b.classList.remove('active');
     });
 
-    bloomFlower('rose');
-  </script>
+    button.classList.add('active');
+    bloomFlower(button.dataset.flower);
+  });
+});
+
+bloomFlower('rose');
+</script>
 </body>
 </html>

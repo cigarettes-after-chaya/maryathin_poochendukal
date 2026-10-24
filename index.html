@@ -366,15 +366,15 @@ function svgElement(tag, attrs) {
 }
 
 function addPetal(cx, cy, rx, ry, color, stroke, angle, delay) {
-  // Wrapper does the rotation around the flower center (200,190)
+  // Wrapper: move to flower centre, then rotate, with an explicit origin
   const wrapper = svgElement('g', {
-    transform: `rotate(${angle} 200 190)`
+    style: `transform-box: view-box; transform-origin: 0 0; transform: translate(200px, 190px) rotate(${angle}deg);`
   });
 
-  // Inner petal only does the bloom animation
+  // Petal drawn relative to the flower centre (0,0)
   const petal = svgElement('ellipse', {
-    cx,
-    cy,
+    cx: cx - 200,
+    cy: cy - 190,
     rx,
     ry,
     fill: color,

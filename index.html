@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -367,6 +366,12 @@ function svgElement(tag, attrs) {
 }
 
 function addPetal(cx, cy, rx, ry, color, stroke, angle, delay) {
+  // Wrapper does the rotation around the flower center (200,190)
+  const wrapper = svgElement('g', {
+    transform: `rotate(${angle} 200 190)`
+  });
+
+  // Inner petal only does the bloom animation
   const petal = svgElement('ellipse', {
     cx,
     cy,
@@ -376,11 +381,11 @@ function addPetal(cx, cy, rx, ry, color, stroke, angle, delay) {
     stroke,
     'stroke-width': 1,
     class: 'petal',
-    // Each petal rotates around the centre of the flower.
-    transform: `rotate(${angle} 200 190)`,
     style: `animation-delay:${delay}s`
   });
-  head.appendChild(petal);
+
+  wrapper.appendChild(petal);
+  head.appendChild(wrapper);
 }
 
 function bloomFlower(type) {

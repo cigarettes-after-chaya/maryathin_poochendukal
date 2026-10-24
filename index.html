@@ -187,7 +187,7 @@ function openBloom(key){
 function replayBloom(){
  const video=document.getElementById("bloomVideo");
  video.pause();
- video.src=`media/${currentKey}.mp4`;
+ video.src=`${currentKey}.mp4`;
  video.load();
  const playPromise=video.play();
  if(playPromise && typeof playPromise.catch==="function") playPromise.catch(()=>{});

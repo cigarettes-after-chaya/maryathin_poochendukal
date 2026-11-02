@@ -300,32 +300,17 @@ button:disabled {
   margin: 0;
 }
 
-/* Special section: the letter bouquet */
-.special {
-  margin: 34px auto 0;
-  width: min(100%, 640px);
-  padding: 26px 20px 22px;
-  border: 1px solid rgba(255,182,204,.16);
-  background: rgba(255,255,255,.035);
-  border-radius: 18px;
-}
-
-.special h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: clamp(24px, 5vw, 32px);
-  margin: 0 0 8px;
-}
-
-.special .subtitle { margin-bottom: 18px; }
-
-.ascii-stage {
-  position: relative;
-  width: 100%;
+/* Letter bouquet: shown inside the main garden frame */
+.garden.bouquet-mode {
+  width: min(100%, 560px);
   aspect-ratio: 1 / 1.05;
   background: #000;
-  border-radius: 12px;
-  overflow: hidden;
+}
+
+#lilyStage {
+  position: absolute;
+  inset: 0;
+  background: #000;
 }
 
 #lilyScreen {
@@ -336,8 +321,6 @@ button:disabled {
   display: block;
   cursor: pointer;
 }
-
-.special .choices { margin: 16px 0 0; }
 
 footer {
   margin-top: 30px;
@@ -407,6 +390,10 @@ footer {
       <ellipse cx="200" cy="352" rx="230" ry="30" fill="url(#groundGrad)"/>
       <g id="gardenGroup"></g>
     </svg>
+
+    <div id="lilyStage" class="hide">
+      <canvas id="lilyScreen" role="img" aria-label="An animated bouquet of lilies made of text characters. Click to replay."></canvas>
+    </div>
   </section>
 
   <div class="flower-name" id="flowerName">Rose</div>
@@ -419,6 +406,12 @@ footer {
     <button data-flower="poppy">🌺 Poppy</button>
     <button data-flower="passionflower">💜 Passionflower</button>
     <button data-flower="garden">🌷 Build your garden</button>
+    <button data-flower="bouquet">💐 Letter Bouquet</button>
+  </div>
+
+  <div class="choices hide" id="lilyControls">
+    <button id="lilyReplay" type="button">Replay</button>
+    <button id="lilyPalette" type="button">Colours: Pink</button>
   </div>
 
   <section class="builder" id="builder" hidden>
@@ -427,18 +420,6 @@ footer {
     <div class="builder-actions">
       <button id="bloomGarden" disabled>🌸 Bloom my garden</button>
       <button id="clearGarden">Clear</button>
-    </div>
-  </section>
-
-  <section class="special" id="special" aria-label="The letter bouquet">
-    <h2>The Letter Bouquet</h2>
-    <p class="subtitle">Lilies, ruscus and baby's breath, drawn entirely with letters and symbols. Watch the buds open one by one.</p>
-    <div class="ascii-stage" id="lilyStage">
-      <canvas id="lilyScreen" role="img" aria-label="An animated bouquet of lilies made of text characters. Click to replay."></canvas>
-    </div>
-    <div class="choices">
-      <button id="lilyReplay" type="button">Replay</button>
-      <button id="lilyPalette" type="button">Colours: Pink</button>
     </div>
   </section>
 
@@ -953,6 +934,24 @@ clearBtn.addEventListener('click', () => {
   renderBuilder();
 });
 
+const gardenBox = document.querySelector('.garden');
+const lilyStage = document.getElementById('lilyStage');
+const lilyControls = document.getElementById('lilyControls');
+
+function showBouquetMode(on) {
+  gardenBox.classList.toggle('bouquet-mode', on);
+  lilyStage.classList.toggle('hide', !on);
+  lilyControls.classList.toggle('hide', !on);
+
+  if (on) {
+    flowerSvg.classList.add('hide');
+    gardenSvg.classList.add('hide');
+    flowerName.textContent = 'The Letter Bouquet';
+    flowerNote.textContent = "Lilies, ruscus and baby's breath, drawn with letters.";
+    window.dispatchEvent(new Event('lily-replay'));
+  }
+}
+
 document.querySelectorAll('#choices button').forEach(button => {
   button.addEventListener('click', () => {
     document.querySelectorAll('#choices button').forEach(b => {
@@ -960,12 +959,17 @@ document.querySelectorAll('#choices button').forEach(button => {
     });
 
     button.classList.add('active');
+    showBouquetMode(false);
 
-    if (button.dataset.flower === 'garden') {
+    const kind = button.dataset.flower;
+    if (kind === 'garden') {
       showGardenMode(true);
+    } else if (kind === 'bouquet') {
+      showGardenMode(false);
+      showBouquetMode(true);
     } else {
       showGardenMode(false);
-      bloomFlower(button.dataset.flower);
+      bloomFlower(kind);
     }
   });
 });
@@ -1543,6 +1547,7 @@ bloomFlower('rose');
   }
 
   if (replayBtn) replayBtn.addEventListener('click', replay);
+  window.addEventListener('lily-replay', replay);
   screen.addEventListener('click', replay);
   if (paletteBtn) {
     paletteBtn.addEventListener('click', () => {
